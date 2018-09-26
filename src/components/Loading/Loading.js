@@ -7,10 +7,9 @@ class Loading extends Component {
             <div className="container">
                 <section className="section">
                     <div className="container">
-                        <div class="loader">Loading Please Wait !!</div>
+                        <div className="loader">Loading Please Wait !!</div>
                     </div>
                 </section>
-
             </div>
         )
     }

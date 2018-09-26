@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './Maps.css'
+import './Contact.css'
 import GoogleMapReact from 'google-map-react';
 
 const MapsView = ({ text }) => (
@@ -11,7 +11,7 @@ const MapsView = ({ text }) => (
     </div>
 );
 
-class Maps extends Component {
+class Contact extends Component {
 
     static defaultProps = {
         center: {lat: 6.5244, lng: 3.3792},
@@ -39,4 +39,4 @@ class Maps extends Component {
     }
 }
 
-export default Maps
+export default Contact

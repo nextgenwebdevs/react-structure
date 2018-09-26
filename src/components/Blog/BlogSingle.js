@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import './Blog.css'
 import ReactMarkdown from 'react-markdown'
+import Button from './../../ui/NavButton/NavButton'
+import axios from 'axios';
 
-class Blog extends Component {
+class BlogSingle extends Component {
     constructor(props) {
         super(props);
-
+        console.log(this.props.match.params.id)
         this.state = {
             markdownSrc: [
-                '# Lazy Loading Routes with React\n\nWhy do we need to lazy load routes?.\n\n* Reduce code bloat\n* Avoid loading all components at the same time ',
+                '# Testing single page',
                 '\n* React app loads faster',
                 '\n* Load only the component that is needed and preload the others\n',
                 '\n## A quote\n\n<blockquote>\n    A man who splits his code ',
@@ -24,15 +26,20 @@ class Blog extends Component {
 
             htmlMode: 'raw'
         };
+        
+        axios.get('https://jsonplaceholder.typicode.com/todos/1')
+                .then((res)=>{
+
+                });
     }
     render () {
         return (
             <div className="container">
                 <ReactMarkdown source={this.state.markdownSrc} />
-                <a href="/blog/1" >Read More</a>
+                <Button name="Back" link="/blog" />
             </div>
         )
     }
 }
 
-export default Blog
+export default BlogSingle
